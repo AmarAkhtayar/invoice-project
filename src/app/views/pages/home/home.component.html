@@ -1,0 +1,41 @@
+<h1></h1>
+<div class="row mt-5">
+  <div class="col-12">
+
+
+    <div class="input-wrapper">
+      <input type="text" placeholder="search.." #searchInput>
+    </div>
+    <div style="overflow-x:auto;" class="d-flex justify-content-center">
+      <table class="table table-responsive table-striped">
+        <thead class="dark">
+        <tr>
+          <th>Factuurnummer</th>
+          <th>Plaatsing</th>
+          <th>Opdrachtgever</th>
+          <th>Opdrachtnemer</th>
+          <th>Factuurdatum</th>
+          <th>Bedrag</th>
+          <th>Bedrag(incl.BTW)</th>
+          <th>Factuursoort</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let invoice of invoices; index as i">
+          <td>{{invoice.invoice_number}}</td>
+          <td>{{invoice.placement}}</td>
+          <td>x</td>
+          <td>x</td>
+          <td>xx-xx-xxxx</td>
+          <td>$100</td>
+          <td>$100</td>
+          <td>factuur</td>
+
+        </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

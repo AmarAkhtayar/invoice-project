@@ -1,0 +1,62 @@
+<div class="form-wrapper">
+
+  <h2 class="grid-margin page-title">Nieuwe Factuur
+  </h2>
+
+
+  <form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <div class="form-content">
+
+      <div class="d-flex align-align-center w-100 mb-2">
+        <div class="form-group form-txt">
+          <h2 class="form-txt">Plaatsing</h2>
+        </div>
+        <div class="form-group form-select">
+          <select class="custom-select form-control" formControlName="plaatsing">
+            <option [value]="null" selected disabled>Selecteer een plaatsing</option>
+            <option >234980</option>
+            <option>785401</option>
+            <option >234980</option>
+            <option >785401</option>
+          </select>
+          <small *ngIf="isFormSubmitted && formGroup.get('plaatsing').errors?.required"
+                 class="text-danger d-block">Dit veld is verplicht!</small>
+        </div>
+      </div>
+      <div class="d-flex align-align-center w-100">
+        <div class="form-group form-txt">
+          <h2 class="form-txt">Factuurnummer</h2>
+        </div>
+        <div class="form-group form-select">
+          <input type="text"
+                 (keypress)="onlyNumberKey($event)" formControlName="factuurnummer" placeholder="vul het factuurnummer in">
+          <small *ngIf="isFormSubmitted && formGroup.get('factuurnummer').errors?.required"
+                 class="text-danger d-block">Dit veld is verplicht!</small>
+        </div>
+      </div>
+
+      <div class="d-flex w-100">
+        <h2 class="form-txt">Declaraties</h2>
+        <div class="form-select options-wrapper">
+          <div class="inputGroup">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">Option One</label>
+          </div>
+
+          <div class="inputGroup">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">Option Two</label>
+          </div>
+        </div>
+      </div>
+
+     <div class="btn-wrapper">
+       <button type="submit" class=" btn btn-sm btn-success">
+         submit
+       </button>
+     </div>
+    </div>
+  </form>
+
+
+</div>
